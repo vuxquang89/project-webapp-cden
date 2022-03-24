@@ -316,7 +316,7 @@ $(document).ready(function(){
 	/* =================================
 	ISOTOP
 	=================================== */	
-
+	/*
 	var $grid = $('.grid').isotope({
 		itemSelector: '.grid-item',
 		isFitWidth: true,
@@ -328,7 +328,7 @@ $(document).ready(function(){
 	$grid.imagesLoaded().progress( function() {
 		$grid.isotope('layout');
 	});
-
+	*/
 	$('#filter2 a').on('click', function() {
  		$('#filter2 .active').removeClass('active');
 		$(this).addClass('active');
@@ -343,7 +343,7 @@ $(document).ready(function(){
 		});
 		return false;
  	});
-
+	/* 
 	var $gridv2 = $('.grid-v1');
 	$gridv2.isotope({
 		itemSelector: '.grid-item-v1',
@@ -357,7 +357,7 @@ $(document).ready(function(){
 	$gridv2.imagesLoaded().progress( function() {
 		$gridv2.isotope('layout');
 	});
-
+	
 	$('.portfolio_filter a').on('click', function() {
  		$('.portfolio_filter .active').removeClass('active');
 		$(this).addClass('active');
@@ -372,9 +372,87 @@ $(document).ready(function(){
 		});
 		return false;
  	});
-
-
+	 */
 	
+	 $("#btn-more").hover(
+		function () {
+            $('.fa-refresh').addClass("fa-spin");
+		},
+		function () {
+            $('.fa-refresh').removeClass("fa-spin");
+		}
+	);
+	
+	/*================================
+	RESIZE
+	==================================*/
+	$(window).resize(function() {
+        totalwidth = $(window)[0].innerWidth;
+        if (totalwidth >= 768 && totalwidth <= 992) {
+            $(".mcontainer").attr("device-type", "tablet");
+        } else if (totalwidth < 768) {
+            $(".mcontainer").attr("device-type", "phone");
+        } else {
+            $(".mcontainer").attr("device-type", "desktop");
+            $(".navbar-container .show-notification").removeAttr("style");
+            $(".navbar-container .nav-right").removeAttr("style");
+        }
+
+        if($(".menu-icon").hasClass("is-clicked")){
+            var type = $(".mcontainer").attr("device-type");
+            switch(type){
+                case 'tablet':
+                case 'phone':
+                    $(".mcontainer").attr("vertical-effect", "overlay");
+                    break;
+                default:
+                    $(".mcontainer").attr("vertical-effect", "pink");
+                    break;
+            }
+        }else if($(".mcontainer").attr("device-type") == "desktop"){
+            $(".div-navbar").removeAttr("style");
+        }
+        
+        /*
+        dt = $('#' + oid).attr('pcoded-device-type')
+        if (dt == 'desktop' && tw < 992) {
+            devicesize();
+        } else if (dt == 'phone' && tw > 768) {
+            devicesize();
+        } else if (dt == 'tablet' && tw < 768) {
+            devicesize();
+        } else if (dt == 'tablet' && tw > 992) {
+            devicesize();
+        }
+        */
+    });
+
+	/*set active for path*/
+   (function(){
+       let pathname = window.location.pathname;
+       let pathnames = pathname.split("/");
+		console.log(pathnames);
+       var i = 1;
+       if(setPathURL() != ""){
+    	   i = 2;
+       }
+       
+       if(pathnames[i] == 'admin'){
+    	   if(pathnames[i+1] == undefined || pathnames[i+1] == ''){    		   
+    		   $('.mCB_container').find('li[data="dashboard"]').addClass('active');
+    	   }else{	    	   
+	    	   $('.mCB_container').find('li').each(function(){
+	    		   var data = $(this).attr('data');
+					console.log(data);
+					console.log(pathnames[i+1].indexOf(data));
+	    		   if(pathnames[i+1].indexOf(data) != -1){
+	    			   $(this).addClass('active');
+	    			   return false;
+	    		   }	   
+	    	   });
+    	   }  
+       }
+   })();
 });
 
 

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quản lý chiến dịch</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CodedThemes">
+    
+    <meta name="author" content="CodedThemes">
+
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <!-- bootstrap -->
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--datepicker-->
+    <link rel="stylesheet prefetch" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
+
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/icon/themify-icons/themify-icons.css}">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/icon/icofont/css/icofont.css}">
+
+    <!-- Core build with no theme, formatting, non-essential modules -->
+
+    <!-- Rich Text Editor css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/richtext/richtext.min.css}"/>
+
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}">
+
+</head>
+<body>
+	<div class="mcontainer navbar-wrapper" vertical-effect="pink" vertical-nav-type="expanded">
+        <div class="overlay-box"></div>
+        <!-- include header -->
+        <th:block th:include="@{admin/header}"></th:block>
+        
+        <div class="div-main-container">
+            <div class="div-wrapper">
+                <!-- include navbar -->
+                <th:block th:include="@{admin/navbar}"></th:block>
+                
+                <!-- content -->
+                <div class="div-content">
+                    <div class="div-inner-content">
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <div class="page-body">
+                                	<div class="row">
+                                        
+                                        <div class="col-md-12 col-xl-12">
+                                            <div class="table-wrapper">
+                                                <div class="table-title">
+                                                    <div class="row">
+                                                        <div class="col-sm-8 title"><h2>Quản lý chiến dịch</h2></div>
+                                                        <div class="col-sm-4">
+                                                            <a class="btn btn-info" th:href="@{/Donation/admin/createCampaign}" role="button">Thêm chiến dịch mới</a>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <!-- <form class=""> -->
+                                                                <div class="row form-group">
+                                                                	<div class="col-sm-2">
+                                                                		<label class="label-input" for="campaignStatus">Trạng thái: </label>
+                                                                	</div>                                                              
+                                                                    <div class="col-sm-9">
+	                                                                    <div class="col-sm-3 select-action">
+	                                                                    <th:block th:if="${page == 'getId'}">
+	                                                                    
+	                                                                    <th:block th:object="${optionCampaign}">
+	                                                                        <select class="form-control" path="campaignStatus" id="campaignStatus" th:field="*{campaignStatus}">
+	                                                                            <option value="0">Chưa kích hoạt</option>
+	                                                                            <option value="1">Đang hoạt động</option>
+	                                                                            <option value="2">Đã hết hạn</option>
+	                                                                            <option value="3">Đã hoàn thành</option>
+	                                                                        </select>
+	                                                                    </th:block>
+	                                                                    
+	                                                                    </th:block>
+	                                                                    <th:block th:if="${page == 'get'}">	                                                                    
+	                                                                        <select class="form-control" path="campaignStatus" id="campaignStatus">
+	                                                                            <option value="0">Chưa kích hoạt</option>
+	                                                                            <option value="1">Đang hoạt động</option>
+	                                                                            <option value="2">Đã hết hạn</option>
+	                                                                            <option value="3">Đã hoàn thành</option>
+	                                                                        </select>
+	                                                                    
+	                                                                    </th:block>
+	                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                            <!-- </form> -->
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <form class="form-select-item">
+                                                                <div class="row form-group">
+                                                                    <div class="col-sm-2">
+                                                                		<label class="label-input" for="saction">Hiển thị: </label>
+                                                                	</div>
+                                                                	<div class="col-sm-6">
+	                                                                    <div class="col-sm-3 select-item">
+	                                                                        <select class="form-control" id="limitShowItem">
+	                                                                        	<option value="5">5</option>
+	                                                                            <option value="10">10</option>
+	                                                                            <option value="20">20</option>
+	                                                                            <option value="30">30</option>
+	                                                                            <option value="40">40</option>
+	                                                                        </select>
+	                                                                    </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+			                                                            <div class="form-group has-feedback has-search">
+			                                                                <span class="ti-search form-control-feedback"></span>
+			                                                                <input id="iSearch" type="text" class="form-control" placeholder="Tìm kiếm" onkeyup="searchCampaign(this);">
+			                                                            </div>
+                                                        			</div>
+                                                                </div>
+                                                            </form>
+                                                        </div>            
+                                                        
+                                                    </div>
+                                                </div>
+                                                <table id="mTableCampaign" class="table table-based table-hover table-style">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <div class="checkbox-del">
+                                                                    <input id="checkDelGroup" th:disabled="${campaignStatus == 0}? false : true" class="checkbox-del-group" type="checkbox">
+                                                                    <button id="btnDelGroup" disabled="disabled" class="btn btn-danger btn-del" type="button"><i class="ti-trash"></i></button>
+                                                                </div>
+                                                            </th>
+                                                            <th>Tên chiến dịch</th>
+                                                            <th>Mức quyên góp</th>
+                                                            <th>Ngày bắt đầu</th>
+                                                            <th>Ngày kết thúc</th>
+                                                            <th>Trạng thái</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr th:each = "campaign:${campaigns}">
+                                                            <td>
+                                                                <div class="checkbox-del">
+                                                                    <input class="checkbox-del-group check-del" type="checkbox" th:disabled="*{campaign.status == 0}? false : true"> 
+                                                                    <input type="hidden" th:feild="${campaign.campaignId}">                                                   
+                                                                </div>
+                                                            </td>
+                                                            <td class="td-style" th:utext="${campaign.name}">...</td>
+                                                            <td th:utext="${#numbers.formatInteger(campaign.goal, 3, 'POINT')}">...</td>
+                                                            <td th:utext="${campaign.dateStart}">...</td>
+                                                            <td th:utext="${campaign.dateEnd}">...</td>
+                                                            <td th:switch="${campaign.status}">
+                                                                <span th:case="0" class="label label-warning m-status">Chưa kích hoạt</span>
+                                                                <span th:case="1" class="label label-primary m-status">Đang hoạt động</span>
+                                                                <span th:case="2" class="label label-danger m-status">Đã hết hạn</span>
+                                                                <span th:case="*" class="label label-success m-status">Đã hoàn thành</span>
+                                                            </td>
+                                                            <td class="td-action">
+                                                                <a th:href="@{'/Donation/admin/editCampaign/' + ${campaign.campaignId}}" th:class="${campaign.status == 3} ? 'disabled' : 'edit'" class="edit" title="Chỉnh sửa"><i class="ti-pencil"></i></a>
+
+                                                                <a href='#' th:class="${campaign.status == 0} ? 'delete' : 'disabled'" title='Xóa' th:data='${campaign.campaignId}' onclick='aDelCampaign(this);return false;'><i class="ti-trash"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                            
+                                                    </tbody>
+                                                </table>
+                                                <div class="clearfix">
+                                                	<div>
+                                                    	<div class="hint-text">Hiển thị <b th:text="${limit > totalRecords ? totalRecords : limit}">..</b> trong số <b th:text="${totalRecords}">..</b> mục</div>
+                                                    </div>
+                                                    <div class="box-pagination">
+                                                        <div class="pagination">
+                                                            <ul class="pagination-body" ul-click="campaign">
+                                                                <li><a href="#" onclick='return false' class="prev"><<</a></li>
+                                                                <th:block th:if="${totalPage > 0}">
+                                                                <th:block th:each="i: ${#numbers.sequence(1, totalPage)}">
+                                                                <li th:classappend="${i == 1} ? 'pageNumber pactive' : 'pageNumber'"><a href="#" onclick='return false' th:utext="${i}"></a></li>
+                                                                </th:block>
+                                                                </th:block>
+                                                                <li><a href="#" onclick='return false' class="next">>></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- include footer -->
+    	<th:block th:include="@{admin/footer}"></th:block>
+    </div>  
+   
+    <!-- The Modal -->
+	<div id="myModal" class="myModal">
+
+   		<!-- Modal content -->
+		<div class="modal-content">
+  			<div class="modal-header">
+    			<span class="close">&times;</span>
+    			<h4 class="modal-title"><i class="fa fa-exclamation-triangle"></i>Delete</h4>
+  			</div>
+	  		<div class="m-content modal-body">	    		
+	  		</div>
+	  		<input id="mdata" type="hidden">
+	  		<div class="modal-footer">
+	    		<button type="button" class="btn btn-default" id="modal-cancel-btn">Cancel</button>
+				<button type="button" class="btn btn-danger" onclick="btnDelCampaign();" id="modal-delete-btn">Delete</button>
+	  		</div>
+		</div>
+
+	</div>
+	
+	<!-- alert box modal message-->
+	<div id="modalMsg" class="modal-msg">
+		
+   		<!-- Modal msg content -->
+		<div class="modal-msg-content">
+  			<div class="modal-msg-header">    
+  							
+    			<i class="fa fa-check fa-color-green"></i><h5 class="msg-content">test</h5>
+    			<!-- <i class="far fa-times"></i> -->
+    			
+  			</div>
+	  		
+		</div>
+	</th:block>
+	</div>
+	
+	<!-- alert box modal message-->
+	<div id="msgBox" class="modal-msg">
+	<th:block th:if="${status}">	
+   		<!-- Modal msg content -->
+		<div class="modal-msg-content">
+  			<div class="modal-msg-header">    
+  			<th:block th:if="${status == '0'}">				
+    			<i class="fa fa-check fa-color-green"></i>    			
+    		</th:block>	
+    		<th:block th:unless="${status == '0'}">				
+    			<i class="fa fa-times fa-color-red"></i>    			
+    		</th:block>
+    		<h5 class="msg-content" th:utext="${message}">test</h5>
+  			</div>
+	  		
+		</div>
+	</th:block>
+	</div>
+	
+    
+<!-- Required Jquery -->
+<script type="text/javascript" th:src="@{/assets/js/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/assets/js/jquery-ui/jquery-ui.min.js}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+    
+<script type="text/javascript" th:src="@{/richtext/jquery.richtext.min.js}"></script>
+<script type="text/javascript" th:src="@{/assets/js/script.js}"></script>
+<script type="text/javascript" th:src="@{/assets/js/action.js}"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Đăng nhập</title>
+    <meta charset="UTF-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CÔNG TY TNHH TƯ VẤN - THIẾT KẾ & DỊCH VỤ KỸ THUẬT CDEN</title>
+    <meta name="description" content="CDEN tư vấn, thiết kế, dịch vụ kỹ thuật">
+    <meta name="keywords" content="thi công nhà ở, công trình công cộng, thi công điện nước, báo cháy, chống sét">
+    <meta name="author" content="cden.com">
+
+    
+    <!-- ==============================================
+	Favicons
+	=============================================== -->
+	<link rel="shortcut icon" th:href="@{/assets/images/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" th:href="@{/assets/images/apple-touch-icon.png}">
+	<link rel="apple-touch-icon" sizes="72x72" th:href="@{/assets/images/apple-touch-icon-72x72.png}">
+	<link rel="apple-touch-icon" sizes="114x114" th:href="@{/assets/images/apple-touch-icon-114x114.png}">
+	
+	<!-- ==============================================
+	CSS VENDOR
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/vendor/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/vendor/owl.carousel.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/vendor/owl.theme.default.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/vendor/magnific-popup.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/vendor/animate.min.css}">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/fontawesome.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/brands.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/solid.css}">
+
+
+	<!-- ==============================================
+	Custom Stylesheet
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/cdenstyle.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/style-login.css}">
+	
+</head>
+<body>
+	<div class="mcontainer navbar-wrapper">
+       <div class="login-form">
+		    <form th:action="@{/j_spring_security_check}" method="post">
+		        <h2>Đăng nhập</h2>    
+		         
+		        <div th:if="${param.error}">
+		        	<div class="alert alert-danger">
+                    	Sai tên đăng nhập hoặc mật khẩu.
+                    </div>
+                </div>
+		        
+		        
+		        <div class="form-group">
+		            
+		            <input type="text" id="username" name="username"  class="form-control" placeholder="Nhập tên đăng nhập">
+		        </div>
+		        <div class="form-group">
+		           
+		            <input type="password" id="password" name="password" class="form-control" placeholder="Nhập mật khẩu">
+		        </div>
+		        <div class="form-group clearfix">
+		            <button type="submit" class="btn btn-primary float-left">Đăng nhập</button>
+		            <label class="form-check-label float-left remember-me"><input type="checkbox" name="remember-me"> Ghi nhớ đăng nhập</label>
+		        </div>
+		        <div><a th:href="@{/admin/forgotPassword}">Quên mật khẩu?</a></div>
+		    </form>
+		    
+		</div>
+		 <!-- include footer -->
+       	
+    </div>  
+   
+   
+    
+
+	<!-- JS VENDOR -->
+	<script th:src="@{/assets/js/vendor/jquery.min.js}"></script>
+	<script th:src="@{/assets/js/vendor/bootstrap.min.js}"></script>
+</body>
+</html>

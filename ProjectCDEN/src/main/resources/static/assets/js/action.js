@@ -12,4 +12,18 @@ function readMore() {
       btnText.innerHTML = "Thu gọn"; 
       moreText.style.display = "inline";
     }
-  }
+ }
+
+//set path URL for Ajax when run localhost Tomcat 
+function setPathURL(){
+	var pathname = window.location.pathname;
+	
+	var pt = pathname.split("/");
+	
+	var path = "";
+	if(pt[1].indexOf(pt[2]) >= 0){
+        path = "/"+pt[1];
+	}
+	
+	return path;
+}

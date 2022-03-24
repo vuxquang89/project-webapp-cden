@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- ==============================================
+	Favicons
+	=============================================== -->
+	<link rel="shortcut icon" th:href="@{/assets/images/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" th:href="@{/assets/images/apple-touch-icon.png}">
+	<link rel="apple-touch-icon" sizes="72x72" th:href="@{/assets/images/apple-touch-icon-72x72.png}">
+	<link rel="apple-touch-icon" sizes="114x114" th:href="@{/assets/images/apple-touch-icon-114x114.png}">
+	
+	<!-- ==============================================
+	CSS VENDOR
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/vendor/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/vendor/owl.carousel.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/vendor/owl.theme.default.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/vendor/magnific-popup.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/vendor/animate.min.css}">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/fontawesome.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/brands.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/solid.css}">
+
+	<!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/icon/themify-icons/themify-icons.css}">
+	<!-- ico font -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/icon/icofont/css/icofont.css}">
+    
+	<!-- ==============================================
+	Custom Stylesheet
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/style-custom.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/cdenstyle.css}"/>
+	
+	
+    <script th:src="@{/assets/js/vendor/modernizr.min.js}"></script>
+
+</head>
+<body>
+    <div class="mcontainer navbar-wrapper" vertical-effect="pink" vertical-nav-type="expanded">
+        <div class="overlay-box"></div>
+        <!-- include header -->
+        <th:block th:include="@{admin/header}"></th:block>
+        
+        <div class="div-main-container">
+            <div class="div-wrapper">
+                <!-- include navbar -->
+                <th:block th:include="@{admin/navbar}"></th:block>
+                <!-- content -->
+                <div class="div-content">
+                    <div class="div-inner-content">
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <div class="page-body">
+                                    <div class="row">
+                                        <!--card1 start-->
+                                        <div class="col-md-6 col-xl-4">
+                                            <div class="card widget-card-1">
+                                                <a class="card-block-small" href="#">
+                                                    <i class="icofont icofont-chart-bar-graph bg-c-green card-icon"></i>
+                                                    <span class="text-c-green f-w-600">2</span>
+                                                    
+                                                    <div>
+                                                        <span class="f-left m-t-10 text-muted">
+                                                            <i class="text-c-green f-16 icofont icofont-chart-pie-alt m-r-10"></i>
+                                                            TOTAL VISIT
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!--card1 end-->
+                                        <!--card2 start-->
+                                        <div class="col-md-6 col-xl-4">
+                                            <div class="card widget-card-1">
+                                                <a class="card-block-small" href="#">
+                                                    <i class="icofont icofont-chart-bar-graph bg-c-blue card-icon"></i>
+                                                    <span class="text-c-blue f-w-600">2</span>
+                                                    
+                                                    <div>
+                                                        
+                                                        <span class="f-left m-t-10 text-muted">
+                                                            <i class="text-c-blue f-16 icofont icofont-chart-pie-alt m-r-10"></i>
+                                                            TOTAL PAGE VIEWS
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!--card2 end-->
+                                        <!--card3 start-->
+                                        <div class="col-md-6 col-xl-4">
+                                            <div class="card widget-card-1">
+                                                <a class="card-block-small" href="#">
+                                                    <i class="icofont icofont-chart-bar-graph bg-c-yellow card-icon"></i>
+                                                    <span class="text-c-yellow f-w-600">10</span>
+                                                   	
+                                                    <div>
+                                                        <span class="f-left m-t-10 text-muted">
+                                                            <i class="text-c-yellow f-16 icofont icofont-chart-pie-alt m-r-10"></i>
+                                                            UNIQUE VISITOR
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!--card3 end-->
+                                       
+                                        <div class="col-md-12 col-xl-8">
+                                        	<div></div>
+                                        	<div></div>
+                                        </div>
+
+                                        <div class="col-md-12 col-xl-4"></div>
+
+                                        <div class="col-md-12 col-xl-6"></div>
+
+                                        <div class="col-md-12 col-xl-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- include footer -->
+    	<th:block th:include="@{admin/footer}"></th:block>
+    </div>
+
+
+
+
+
+
+	<!-- JS VENDOR -->
+	<script th:src="@{/assets/js/vendor/jquery.min.js}"></script>
+	<script th:src="@{/assets/js/vendor/bootstrap.min.js}"></script>
+	<script th:src="@{/assets/js/vendor/owl.carousel.js}"></script>
+	<script th:src="@{/assets/js/vendor/jquery.magnific-popup.min.js}"></script>
+
+	<!-- SENDMAIL -->
+	<script th:src="@{/assets/js/vendor/validator.min.js}"></script>
+	<script th:src="@{/assets/js/vendor/form-scripts.js}"></script>
+
+	<script th:src="@{/assets/js/script.js}"></script>
+	<script th:src="@{/assets/js/action.js}"></script>
+</body>
+</html>

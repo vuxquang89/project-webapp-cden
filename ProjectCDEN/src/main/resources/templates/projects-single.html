@@ -397,7 +397,7 @@
 											<a class="pull-left" href="#">
 											  <img class="media-object img-circle" src="https://pbs.twimg.com/profile_images/442656111636668417/Q_9oP8iZ.jpeg" alt="profile">
 											</a>
-											<div class="media-body">
+											<div id="accordion" class="media-body">
 											  	<div class="well well-lg">
 													<h4 class="media-heading text-uppercase reviews">Marco </h4>
 												  	<p class="media-date">
@@ -406,8 +406,69 @@
 												 	<p class="media-comment">
 														Great snippet! Thanks for sharing.
 												  	</p>	
-												  
-											  	</div>              
+													<a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="fa fa-share"></span> Reply</a>
+													<a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyOne"><span class="fa fa-comment"></span> 2 comments</a>
+											  	</div> 
+												<div class="collapse" id="replyOne" data-parent="#accordion">
+													<ul class="media-list">
+														<li class="media media-replied">
+															<a class="pull-left" href="#">
+															  <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/ManikRathee/128.jpg" alt="profile">
+															</a>
+															<div class="media-body">
+															  <div class="well well-lg">
+																  <h4 class="media-heading text-uppercase reviews"><span class="fa fa-share"></span> The Hipster</h4>
+																  <p class="media-date">
+																	22/09/2014
+																  </p>
+																  <p class="media-comment">
+																	Nice job Maria.
+																  </p>
+																  
+															  </div>              
+															</div>
+														</li>
+														<li class="media media-replied" id="replied">
+															<a class="pull-left" href="#">
+															  <img class="media-object img-circle" src="https://pbs.twimg.com/profile_images/442656111636668417/Q_9oP8iZ.jpeg" alt="profile">
+															</a>
+															<div class="media-body">
+															  <div class="well well-lg">
+																  <h4 class="media-heading text-uppercase reviews"><span class="fa fa-share"></span> Mary</h4></h4>
+																  <p class="media-date">
+																	22/09/2014
+																  </p>
+																  <p class="media-comment">
+																	Thank you Guys!
+																  </p>
+																  
+															  </div>              
+															</div>
+														</li>
+													</ul>  
+												</div>   
+												
+												<!--reply comment-->
+												<div id="respond" class="respond-comment">
+													<div class="respond-body">
+														<div class="respond-avatar">
+															<div class="avatar-body">
+																<img class="img-circle" src="https://pbs.twimg.com/profile_images/442656111636668417/Q_9oP8iZ.jpeg" alt="avatar" width="50px" height="50px">
+															</div>
+														</div>
+														<div class="respond-content">
+															<div class="content-body">
+																<form class="f-content">
+																	<div class="content-comment">
+																		<textarea class="enter-comment" name="i-comment" type="text" placeholder="Viết phản hồi.."></textarea>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+													
+												</div>
+												<!--end reply comment-->
 											</div>
 											
 										  </li>          
@@ -607,7 +668,7 @@
 	<script src="js/vendor/form-scripts.js"></script>
 
 	<script src="js/script.js"></script>
-	<script src="js/script-custom.js"></script>
+	<script src="js/script-cden.js"></script>
 
 </body>
 </html>

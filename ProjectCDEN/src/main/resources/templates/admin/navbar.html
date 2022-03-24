@@ -1,0 +1,46 @@
+<div class="div-navbar">
+	<div class="inner-navbar main-menu" style="height: calc(100% - 20px);">
+    	<div class="mCustomBox" id="mCB">
+      		<div id="mCB_container_wrapper" class="mCB_container_wrapper">
+            	<div class="mCB_container" style="width: 100%; left: 0px; top: 0px;">
+                	<ul class="mitem left-item">
+                    	<li data="dashboard">
+                        	<a th:href="@{/admin/dashboard}">
+                            	<span class="micon">
+                                	<i class="ti-settings"></i>
+                                   	<span class="mtext">Bảng điều khiển</span>
+                              	</span>
+                         	</a>
+                      	</li>
+                  		<li data="news">
+                        	<a th:href="@{/admin/manage-news}">
+                            	<span class="micon">
+                                	<i class="ti-bookmark-alt"></i>
+                                    <span class="mtext">Quản lý tin tức</span>
+                               	</span>
+                        	</a>
+                     	</li>
+                        <li data="project">
+                        	<a th:href="@{/admin/manage-projects}">
+                            	<span class="micon">
+                                	<i class="ti-user"></i>
+                                    <span class="mtext">Quản lý dự án</span>
+                            	</span>
+                       		</a>
+                     	</li>
+                     	<!-- 
+                        <li data="User">
+                        	<a th:href="@{/admin/manageUser}">
+	                            <span class="micon">
+	                            	<i class="ti-pie-chart"></i>
+	                                <span class="mtext">Quản lý người dùng</span>
+	                          	</span>
+                            </a>
+                      	</li>
+                      	 -->
+                	</ul>
+            	</div>
+          	</div>
+      	</div>
+  	</div>
+</div>

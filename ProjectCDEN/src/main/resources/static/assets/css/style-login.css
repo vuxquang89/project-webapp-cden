@@ -1,0 +1,31 @@
+.login-form {
+    width: 350px;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-left: auto;
+}
+.login-form form {        
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}    
+
+.login-form form h2{
+	margin-bottom: 20px;
+}
+
+.form-control, .btn {
+    height: 36px;
+    
+}
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 0;
+    border-radius: 20px;
+    
+}
+.remember-me {
+    margin: 8px 0 0 12px;
+}

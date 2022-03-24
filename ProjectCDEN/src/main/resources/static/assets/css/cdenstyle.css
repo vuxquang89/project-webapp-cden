@@ -8,3 +8,289 @@
 .p-class-indent{
     text-indent: 20px;
 }
+
+/*========================================*/
+.carousel-inner img {
+    width: 100%;
+    height: 100%
+}
+
+#custCarousel .carousel-indicators {
+    position: static;
+    margin-top: 20px
+}
+
+#custCarousel .carousel-indicators>li {
+    width: 100px
+}
+
+#custCarousel .carousel-indicators li img {
+    display: block;
+    opacity: 0.5
+}
+
+#custCarousel .carousel-indicators li.active img {
+    opacity: 1
+}
+
+#custCarousel .carousel-indicators li:hover img {
+    opacity: 0.75
+}
+
+.carousel-item img {
+    width: 100%
+}
+
+
+/*=============comment layout==============*/
+.page-header { position: relative; }
+.reviews {
+    color: #555;    
+    font-weight: bold;
+    margin: 10px auto 20px;
+    font-size: 1.2em;
+}
+.notes {
+    color: #999;
+    font-size: 12px;
+}
+/*
+.nav-tabs>li {
+    float: left;
+    margin-bottom: -1px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+
+.nav>li {
+    position: relative;
+    display: block;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+*/
+.media .media-object { max-width: 120px; }
+.media-body { 
+    position: relative; 
+    margin-left: 10px;
+}
+.media-date { 
+    position: absolute; 
+    right: 25px;
+    top: 25px;
+    font-size: 12px;
+}
+.media-date li { padding: 0; }
+.media-date li:first-child:before { content: ''; }
+.media-date li:before { 
+    content: '.'; 
+    margin-left: -2px; 
+    margin-right: 2px;
+}
+.media-comment { margin-bottom: 20px; }
+.media-replied { /*margin: 0 0 20px 50px;*/ }
+.media-replied .media-heading { padding-left: 6px; }
+
+.btn-circle {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+.btn-circle span { padding-right: 6px; }
+.embed-responsive { margin-bottom: 20px; }
+.tab-content {
+    padding: 50px 15px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.nav-tabs, .media-list{
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.well-lg {
+    padding: 24px;
+    border-radius: 6px;
+}
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
+}
+
+#add-comment input{
+    height: 38px;
+    font-size: 1rem;
+}
+.custom-input-file {
+    overflow: hidden;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: #eee url('https://s3.amazonaws.com/uifaces/faces/twitter/walterstephanie/128.jpg');    
+    background-size: 120px;
+    border-radius: 120px;
+}
+input[type="file"]{
+    z-index: 999;
+    line-height: 0;
+    font-size: 0;
+    position: absolute;
+    opacity: 0;
+    filter: alpha(opacity = 0);-ms-filter: "alpha(opacity=0)";
+    margin: 0;
+    padding:0;
+    left:0;
+}
+.uploadPhoto {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    display: none;
+    width: 50%;
+    height: 50%;
+    color: #fff;    
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;    
+    background-color: rgba(0,0,0,.3);
+    border-radius: 50px;
+    cursor: pointer;
+}
+.custom-input-file:hover .uploadPhoto { display: block; }
+
+.respond-body {
+    display: flex;
+    padding-top: 4px;
+    width: 100%;
+    align-items: center;
+}
+
+.respond-avatar {
+    margin-right: 6px;
+    position: relative;
+    align-self: flex-start;
+}
+
+.respond-content {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.content-body {
+    width: 100%;
+}
+
+form.f-content{
+    background-color: #f5f5f5;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+    
+}
+
+.enter-comment{
+    border-top-style: hidden;
+    border-bottom-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    width: 95%;
+    background-color: #f5f5f5;
+    resize: none;
+    height: 24px;
+    box-sizing: content-box;
+}
+/*=============end comment layout==========*/
+
+/*=============css create project layout======*/
+.hmtc-group {
+	display: grid;
+    background-color: #ebe9e9;
+    padding: 5px;
+    border-radius: 5px;
+}
+.hmtc-col {
+    /*display: flex;*/
+}
+
+p.hmtc-name {
+    display: block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    float: left;
+}
+a.hmtc-btn-delete{
+	float: right;
+	display: block;
+	color: #E34724;
+}
+a.hmtc-btn-add {
+    background-color: #168bef;
+    color: #fbfbfb;
+    margin-left: 10px;
+    padding: 10px;
+    display: inline-flex;
+    border-radius: 5px;
+}
+/*=============end css create project layout====*/
+/*
+.form-group {
+    margin-bottom: 15px;
+}
+@media (min-width: 768px){
+    .form-horizontal .control-label {
+        padding-top: 7px;
+        margin-bottom: 0;
+        text-align: right;
+    }
+}
+@media (min-width: 768px){
+    .col-sm-2 {
+        width: 16.66666667%;
+    }
+}
+@media (min-width: 768px){
+    .col-sm-2, .col-sm-10, .col-sm-12 {
+        float: left;
+    }
+}
+*/
